@@ -17,23 +17,44 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("ICT Project", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <text>Ict Project</text>
 <!-- This section here adds the dropdown button-->
+                <!-- DROP DOWN 1 FOR HOME-->
                 <<div class="dropdown">
-                    <button class="dropbtn">Dropdown</button>
-<!-- This section here adds the content for the dropdown, Using the action links for mvc seems to work (need to test further with another working page).-->
+                    <button class="dropbtn">HOME</button>
+                     <!-- This section here adds the content for the dropdown-->
                     <div class="dropdown-content">
-                        <!-- somethiong is broken here cannot link to any page i have made.. even ones made in project (Use of custom controllers did not work)-->
-                        <!-- Correct action link and controller... Page doest exist-->
-                       <li>@Html.ActionLink("TestNavPage", "TestNav", "Home")</li>
+                       <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    </div>
+                </div>
+                <!-- DROP DOWN 2 FOR ENTER RESULTS-->
+                <<div class="dropdown">
+                    <button class="dropbtn">ENTER RESULTS</button>
+                    <!-- This section here adds the content for the dropdown.-->
+                    <div class="dropdown-content">
+                        <li>@Html.ActionLink("Daily Results", "DailyResults", "DropEtrRes")</li>
+                    </div>
+                </div>
+                <!-- DROP DOWN 3 FOR ENTER REPORTS-->
+                <<div class="dropdown">
+                    <button class="dropbtn">REPORTS</button>
+                    <!-- This section here adds the content for the dropdown.-->
+                    <div class="dropdown-content">
+                        <li>@Html.ActionLink("Attendance Tracker", "attendanceTracker", "DropReports")</li>
+                        <li>@Html.ActionLink("int Performance", "intPerformance", "DropReports")</li>
+                        <li>@Html.ActionLink("Nightly Performance", "nightlyPerformance", "DropReports")</li>
+                        <li>@Html.ActionLink("Top Ten [country]", "top10country", "DropReports")</li>
+                        <li>@Html.ActionLink("Top Ten World", "top10World", "DropReports")</li>
+                        <li>@Html.ActionLink("Top Guns Nightly", "topGunsNightly", "DropReports")</li>
+                        <li>@Html.ActionLink("Weekly Best Region", "weeklyBestRegion", "DropReports")</li>
+                        <li>@Html.ActionLink("Weekly Performance", "weeklyPerformance", "DropReports")</li>
+                        <li>@Html.ActionLink("Weekly Sales Stats", "weeklySalesStats", "DropReports")</li>
                     </div>
                 </div>
             </div>
+
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -52,6 +73,8 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+
 
 <style>
     /* Style The Dropdown Button */

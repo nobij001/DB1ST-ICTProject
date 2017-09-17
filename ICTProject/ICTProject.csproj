@@ -196,6 +196,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DropHomeController.cs" />
+    <Compile Include="Controllers\DropEtrResController.cs" />
+    <Compile Include="Controllers\DropReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\DbcContext.cs" />
     <Compile Include="Data\TestData.cs" />
@@ -289,8 +292,20 @@
     <Content Include="Views\DailyDatas\Edit.cshtml" />
     <Content Include="Views\DailyDatas\Index.cshtml" />
     <Content Include="Views\Home\TestNav.cshtml" />
+    <Content Include="Views\DropEtrRes\DailyResults.cshtml" />
+    <Content Include="Views\DropReports\top10World.cshtml" />
+    <Content Include="Views\DropReports\top10country.cshtml" />
+    <Content Include="Views\DropReports\weeklyBestRegion.cshtml" />
+    <Content Include="Views\DropReports\topGunsNightly.cshtml" />
+    <Content Include="Views\DropReports\attendanceTracker.cshtml" />
+    <Content Include="Views\DropReports\intPerformance.cshtml" />
+    <Content Include="Views\DropReports\weeklySalesStats.cshtml" />
+    <Content Include="Views\DropReports\weeklyPerformance.cshtml" />
+    <Content Include="Views\DropReports\nightlyPerformance.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\DropHome\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
