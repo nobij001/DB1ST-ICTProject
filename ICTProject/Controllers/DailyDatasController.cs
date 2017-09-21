@@ -19,14 +19,16 @@ namespace ICTProject.Views
         public ActionResult Index()
         {
 
-//            var innerJoinQuery =
-//from category in categories
-//join prod in products on category.ID equals prod.CategoryID
-//select new { ProductName = prod.Name, Category = category.Name };
+            var data = from a in db.DailyData select a;
+
+            //            var innerJoinQuery =
+            //from category in categories
+            //join prod in products on category.ID equals prod.CategoryID
+            //select new { ProductName = prod.Name, Category = category.Name };
 
             //var detail = (from dd in db.DailyData join x in db.SdcDetails
-              //            on dd.SdcDetailsID equals x.SdcDetailsId select new { dd, x }).ToList();
-            return View(db.DailyData.ToList());
+            //            on dd.SdcDetailsID equals x.SdcDetailsId select new { dd, x }).ToList();
+            return View(data);
         }
 
         // GET: DailyDatas/Details/5
@@ -56,6 +58,11 @@ namespace ICTProject.Views
         // GET: DailyDatas/Create
         public ActionResult Create()
         {
+            DailyDataEntry data = new DailyDataEntry();
+            var d = (from m in db.DailyData select m).ToList();
+            data.dailyDatas = d;
+            ViewBag.dataDetail = d;
+           
             return View();
         }
 

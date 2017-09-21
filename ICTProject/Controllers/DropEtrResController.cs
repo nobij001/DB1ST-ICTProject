@@ -11,6 +11,7 @@ namespace ICTProject.Controllers
     {
         // GET: Drop2
         public ActionResult DailyResults()
+
         {
             return View();
         }
