@@ -200,6 +200,7 @@
     <Compile Include="Controllers\DropEtrResController.cs" />
     <Compile Include="Controllers\DropReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SdcDetailsController.cs" />
     <Compile Include="Data\DbcContext.cs" />
     <Compile Include="Data\TestData.cs" />
     <Compile Include="Global.asax.cs">
@@ -303,6 +304,11 @@
     <Content Include="Views\DropReports\weeklyPerformance.cshtml" />
     <Content Include="Views\DropReports\nightlyPerformance.cshtml" />
     <Content Include="Views\DailyDatas\Create.cshtml" />
+    <Content Include="Views\SdcDetails\Create.cshtml" />
+    <Content Include="Views\SdcDetails\Delete.cshtml" />
+    <Content Include="Views\SdcDetails\Details.cshtml" />
+    <Content Include="Views\SdcDetails\Edit.cshtml" />
+    <Content Include="Views\SdcDetails\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\DropHome\" />
