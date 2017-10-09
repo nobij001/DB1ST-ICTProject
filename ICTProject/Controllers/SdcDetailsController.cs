@@ -18,6 +18,8 @@ namespace ICTProject.Controllers
         // GET: SdcDetails
         public ActionResult Index()
         {
+
+            var Name = from m in db.SdcDetails select new { m.FirstName, m.LastName };
             return View(db.SdcDetails.ToList());
         }
 
