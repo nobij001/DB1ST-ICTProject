@@ -44,6 +44,11 @@
         <th>
             @Html.DisplayNameFor(model => model.Interviews)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.sdcDetails)
+        </th>        <th>
+            @Html.DisplayNameFor(model => model.SdcDetailsID)
+        </th>
         <th></th>
     </tr>
  @if(Model != null){
@@ -82,6 +87,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Interviews)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sdcDetails)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SdcDetailsID)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.DailyDataId }) |

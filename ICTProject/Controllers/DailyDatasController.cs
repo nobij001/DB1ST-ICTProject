@@ -58,11 +58,10 @@ namespace ICTProject.Views
         // GET: DailyDatas/Create
         public ActionResult Create()
         {
-            DailyDataEntry data = new DailyDataEntry();
-            var d = (from m in db.DailyData select m).ToList();
-            data.dailyDatas = d;
-            ViewBag.dataDetail = d;
-           
+            var name = (from m in db.SdcDetails select new { m = m.FirstName + " " + m.LastName}).ToList();
+            ViewBag.dailydata = name;
+            DailyData sdc = new DailyData();
+            
             return View();
         }
 

@@ -19,9 +19,8 @@ namespace ICTProject.Controllers
         public ActionResult Index()
         {
 
-            var Name = from m in db.SdcDetails select new { m.FirstName, m.LastName };
             return View(db.SdcDetails.ToList());
-        }
+        } 
 
         // GET: SdcDetails/Details/5
         public ActionResult Details(int? id)

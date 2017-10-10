@@ -5,78 +5,68 @@
 }
 
 <h2>Index</h2>
-<p>
-    ENTRY DATE <input type="date" contenteditable="true"  />
-    
-</p>
+<dl class="dl-horizontal">
+    <dt> ENTRY DATE</dt>
+    <dd> <input type="date" contenteditable="true" /> </dd>
+    </dl>
 
-<div class="form-group">
-    <div class="col-md-2">
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="button" value="Add/Edit SDC" onclick="location.href='@Url.Action("Create","SdcDetails")'" class="btn btn-default" />
+
+    <p>  <b> CURRENT SELF DEFENCE CONSULTANTS</b></p>
+    <div class="form-group">
+        <div class="col-md-2">
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="button" value="Add/Edit SDC" onclick="location.href='@Url.Action("Create","SdcDetails")'" class="btn btn-default" />
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-10">
-        <table class="table">
-            <tr>
-                <th>
-
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.FirstName)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.LastName)
-                </th>
-
-                <th>
-                    @Html.DisplayNameFor(model => model.IsTeamCoordinator)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.IsFullTime)
-                </th>
-                <th>SEQUENCE</th>
-                <th>UP</th>
-                <th>DOWN</th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
+        <div class="col-md-10">
+            <table class="table">
                 <tr>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.SdcDetailsId })
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.FirstName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.LastName)
-                    </td>
- 
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IsTeamCoordinator)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.IsFullTime)
-                    </td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        
-                        @Html.ActionLink("Delete", "Delete", new { id = item.SdcDetailsId })
-                    </td>
-                </tr>
-            }
+                    <th>
 
-        </table>
+                    </th>
+                    <th> Name </th>
+
+                    <th> TC/SDC </th>
+                    <th> FT/PT </th>
+                    <th> SEQUENCE </th>
+                    <th>UP</th>
+                    <th>DOWN</th>
+                    <th></th>
+                </tr>
+
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.SdcDetailsId })
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Fullname)
+                        </td>
+
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsTeamCoordinator)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IsFullTime)
+                        </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>
+
+                            @Html.ActionLink("Delete", "Delete", new { id = item.SdcDetailsId })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+        </div>
     </div>
-</div>
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="button" value="Save Changes & submit" onclick="location.href='@Url.Action("Create","DailyDatas")'" class="btn btn-default" />
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="button" value="Save Changes & submit" onclick="location.href='@Url.Action("Create","DailyDatas")'" class="btn btn-default" />
+        </div>
     </div>
-</div>

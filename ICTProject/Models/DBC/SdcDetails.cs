@@ -15,5 +15,6 @@ namespace ICTProject.Models.DBC
         public int IsFullTime { get; set; }
         public Region RegionId { get; set; }
         public Zone ZoneId { get; set; }
+        public string Fullname { get { return FirstName + " " + LastName; } }
     }
 }
