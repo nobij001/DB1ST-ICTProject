@@ -59,9 +59,11 @@ namespace ICTProject.Views
         public ActionResult Create()
         {
             var name = (from m in db.SdcDetails select new { m = m.FirstName + " " + m.LastName}).ToList();
-            ViewBag.dailydata = name;
-            DailyData sdc = new DailyData();
-            
+            var comt = db.PDTopics;
+            var sdc = db.SdcDetails.ToList();
+            ViewBag.dailydata = sdc;
+            ViewBag.comment = comt;
+
             return View();
         }
 

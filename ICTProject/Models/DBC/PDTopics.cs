@@ -8,5 +8,6 @@ namespace ICTProject.Models.DBC
     public class PDTopics
     {
         public int PDTopicsId { get; set; }
+        public String comment { get; set; }
     }
 }
