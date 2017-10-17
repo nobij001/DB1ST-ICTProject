@@ -268,7 +268,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\RMHome.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
     <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
@@ -294,7 +294,6 @@
     <Content Include="Views\DailyDatas\Details.cshtml" />
     <Content Include="Views\DailyDatas\Edit.cshtml" />
     <Content Include="Views\DailyDatas\Index.cshtml" />
-    <Content Include="Views\Home\TestNav.cshtml" />
     <Content Include="Views\DropEtrRes\DailyResults.cshtml" />
     <Content Include="Views\DropReports\top10World.cshtml" />
     <Content Include="Views\DropReports\top10country.cshtml" />

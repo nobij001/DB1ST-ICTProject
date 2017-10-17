@@ -79,7 +79,7 @@ namespace ICTProject.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("RMHome", "Home");
         }
     }
 }
