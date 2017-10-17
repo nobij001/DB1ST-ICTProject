@@ -223,6 +223,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\DailyDatasController.cs" />
+    <Compile Include="Controllers\GraphController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\DBC.mdf" />
@@ -310,6 +311,7 @@
     <Content Include="Views\SdcDetails\Details.cshtml" />
     <Content Include="Views\SdcDetails\Edit.cshtml" />
     <Content Include="Views\SdcDetails\Index.cshtml" />
+    <Content Include="Views\Graph\membershipGraph.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\DropHome\" />
