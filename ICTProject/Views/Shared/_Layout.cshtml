@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@using System;
+@using System.Collections.Generic;
+@using System.Linq;
+@using System.Web;
+@using System.Web.Mvc;
+@using ICTProject.Models.DBC;
+@using ICTProject.Data;
+@using System.Web.Security;
+@using System.Web.UI.WebControls;
+@using ICTProject.Views;
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -29,27 +40,100 @@
                 </div>
                 <!-- DROP DOWN 2 FOR ENTER RESULTS-->
                 <<div class="dropdown">
-                    <button class="dropbtn">ENTER RESULTS</button>
-                    <!-- This section here adds the content for the dropdown.-->
-                    <div class="dropdown-content">
-                        <li>@Html.ActionLink("Daily Results", "Create", "DailyDatas")</li>
-                    </div>
+
+                        @{
+                        <!--Linking database to check username -->
+                            using (DbcContext db = new DbcContext())
+                            {
+                                var userDB = db.Users.Where(a => a.Username.Equals(User.Identity.Name)).FirstOrDefault();
+                                <!--Database Null check-->
+                                if (userDB != null)
+                                {
+                                <!--Access Level IF Statements-->
+                                <!-- RM -->
+                                    if (userDB.accessLevel == 1)
+                                    {
+                                     <button class="dropbtn">ENTER RESULTS</button>
+                                        <!-- This section here adds the content for the dropdown.-->
+                                        <div class="dropdown-content">
+                                            <li>@Html.ActionLink("Daily Results", "Create", "DailyDatas")</li>
+                                        </div>
+                                    }
+                                }
+                            }
+                        } 
                 </div>
+
+
                 <!-- DROP DOWN 3 FOR ENTER REPORTS-->
                 <<div class="dropdown">
-                    <button class="dropbtn">REPORTS</button>
-                    <!-- This section here adds the content for the dropdown.-->
-                    <div class="dropdown-content">
-                        <li>@Html.ActionLink("Attendance Tracker", "attendanceTracker", "DropReports")</li>
-                        <li>@Html.ActionLink("int Performance", "intPerformance", "DropReports")</li>
-                        <li>@Html.ActionLink("Nightly Performance", "nightlyPerformance", "DropReports")</li>
-                        <li>@Html.ActionLink("Top Ten [country]", "top10country", "DropReports")</li>
-                        <li>@Html.ActionLink("Top Ten World", "top10World", "DropReports")</li>
-                        <li>@Html.ActionLink("Top Guns Nightly", "topGunsNightly", "DropReports")</li>
-                        <li>@Html.ActionLink("Weekly Best Region", "weeklyBestRegion", "DropReports")</li>
-                        <li>@Html.ActionLink("Weekly Performance", "weeklyPerformance", "DropReports")</li>
-                        <li>@Html.ActionLink("Weekly Sales Stats", "weeklySalesStats", "DropReports")</li>
-                    </div>
+                        @{
+                            <!--Linking database to check username -->
+                            using (DbcContext db = new DbcContext())
+                            {
+                                var userDB = db.Users.Where(a => a.Username.Equals(User.Identity.Name)).FirstOrDefault();
+
+                                <!--ALL POSSIBLE PAGES TO NAV TOO-->
+                                @*<li>@Html.ActionLink("Attendance Tracker", "attendanceTracker", "DropReports")</li>
+                                    <li>@Html.ActionLink("int Performance", "intPerformance", "DropReports")</li>
+                                    <li>@Html.ActionLink("Nightly Performance", "nightlyPerformance", "DropReports")</li>
+                                    <li>@Html.ActionLink("Top Ten [country]", "top10country", "DropReports")</li>
+                                    <li>@Html.ActionLink("Top Ten World", "top10World", "DropReports")</li>
+                                    <li>@Html.ActionLink("Top Guns Nightly", "topGunsNightly", "DropReports")</li>
+                                    <li>@Html.ActionLink("Weekly Best Region", "weeklyBestRegion", "DropReports")</li>
+                                    <li>@Html.ActionLink("Weekly Performance", "weeklyPerformance", "DropReports")</li>
+                                    <li>@Html.ActionLink("Weekly Sales Stats", "weeklySalesStats", "DropReports")</li>*@
+
+                        <!--Database Null Check-->
+                        if (userDB != null)
+                        {
+                            <!--Access Level IF Statements-->
+                            <!-- RM -->
+                            if (userDB.accessLevel == 1)
+                            {
+                                <button class="dropbtn">REPORTS</button>
+                                <!-- This section here adds the content for the dropdown.-->
+                                <div class="dropdown-content">
+                                    <li>@Html.ActionLink("Top Ten [country]", "top10country", "DropReports")</li>
+                                    <li>@Html.ActionLink("Top Ten World", "top10World", "DropReports")</li>
+                                    <li>@Html.ActionLink("Attendance Tracker", "attendanceTracker", "DropReports")</li>
+                                    <li>@Html.ActionLink("Top Guns Nightly", "topGunsNightly", "DropReports")</li>
+                                    <li>@Html.ActionLink("Weekly Best Region", "weeklyBestRegion", "DropReports")</li>
+                                </div>
+                            }
+                            <!-- ZD -->
+                            if (userDB.accessLevel == 2)
+                            {
+                                <button class="dropbtn">REPORTS</button>
+                                <!-- This section here adds the content for the dropdown.-->
+                                <div class="dropdown-content">
+                                <li>@Html.ActionLink("int Performance", "intPerformance", "DropReports")</li>
+                                        <li>@Html.ActionLink("Nightly Performance", "nightlyPerformance", "DropReports")</li>
+                                        <li>@Html.ActionLink("Top Ten [country]", "top10country", "DropReports")</li>
+                                        <li>@Html.ActionLink("Top Ten World", "top10World", "DropReports")</li>
+                                        <li>@Html.ActionLink("Top Guns Nightly", "topGunsNightly", "DropReports")</li>
+                                        <li>@Html.ActionLink("Weekly Best Region", "weeklyBestRegion", "DropReports")</li>
+                                        <li>@Html.ActionLink("Weekly Performance", "weeklyPerformance", "DropReports")</li>
+                                        <li>@Html.ActionLink("Weekly Sales Stats", "weeklySalesStats", "DropReports")</li>
+                                       </div>
+                            }
+                            <!-- UM -->
+                            if (userDB.accessLevel == 3)
+                            {                               
+                                 <button class="dropbtn">REPORTS</button>
+                                <!-- This section here adds the content for the dropdown.-->
+                                <div class="dropdown-content">
+                                <li>@Html.ActionLink("Top Ten [country]", "top10country", "DropReports")</li>
+                                        <li>@Html.ActionLink("Top Ten World", "top10World", "DropReports")</li>
+                                        <li>@Html.ActionLink("Attendance Tracker", "attendanceTracker", "DropReports")</li>
+                                        <li>@Html.ActionLink("Top Guns Nightly", "topGunsNightly", "DropReports")</li>
+                                        <li>@Html.ActionLink("Weekly Best Region", "weeklyBestRegion", "DropReports")</li>
+                                       </div>
+                                }
+                            }
+                        }
+                        }
+                    
                 </div>
             </div>
 

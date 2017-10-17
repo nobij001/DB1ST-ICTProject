@@ -36,6 +36,9 @@ namespace ICTProject.Models.DBC
         [MaxLength(128)]
         public string LastName { get; set; }
 
+        [Required(ErrorMessage = "access Level is required.")]
+        public int accessLevel { get; set; }
+
         public Boolean RememberMe { get; set; }
         public Boolean Inactive { get; set; }
         public Zone ZoneId { get; set; }
