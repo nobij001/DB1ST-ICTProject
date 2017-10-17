@@ -311,6 +311,8 @@
     <Content Include="Views\SdcDetails\Edit.cshtml" />
     <Content Include="Views\SdcDetails\Index.cshtml" />
     <Content Include="Views\Graph\membershipGraph.cshtml" />
+    <Content Include="Views\Home\ZDHome.cshtml" />
+    <Content Include="Views\Home\UMHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\DropHome\" />

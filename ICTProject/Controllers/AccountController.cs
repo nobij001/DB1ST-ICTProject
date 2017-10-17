@@ -78,8 +78,9 @@ namespace ICTProject.Controllers
         [Authorize]
         public ActionResult Logout()
         {
+
             FormsAuthentication.SignOut();
-            return RedirectToAction("RMHome", "Home");
+            return RedirectToAction("Login", "Account");
         }
     }
 }
