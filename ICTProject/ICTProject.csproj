@@ -237,6 +237,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-drag-and-drop-lists.js" />
+    <Content Include="Scripts\angular-drag-and-drop-lists.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -313,6 +315,7 @@
     <Content Include="Views\Graph\membershipGraph.cshtml" />
     <Content Include="Views\Home\ZDHome.cshtml" />
     <Content Include="Views\Home\UMHome.cshtml" />
+    <Content Include="Views\DailyDatas\View1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\DropHome\" />

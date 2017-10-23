@@ -3,6 +3,16 @@
 @{
     ViewBag.Title = "Index";
 }
+@{
+    var i = 0;
+    if(i >= 0)
+    {
+        i++;
+    }
+
+}
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.js"></script>
 
 <h2>Index</h2>
 <dl class="dl-horizontal">
@@ -21,51 +31,53 @@
             </div>
         </div>
         <div class="col-md-10">
-            <table class="table">
-                <tr>
-                    <th>
-
-                    </th>
-                    <th> Name </th>
-
-                    <th> TC/SDC </th>
-                    <th> FT/PT </th>
-                    <th> SEQUENCE </th>
-                    <th>UP</th>
-                    <th>DOWN</th>
-                    <th></th>
-                </tr>
-                
-                @foreach (var item in Model)
-
-            {
-                    
+            <table class="table" >
+                <tbody>
                     <tr>
-                        <td>
-                            @Html.ActionLink("Edit", "Edit", new { id = item.SdcDetailsId })
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Fullname)
-                        </td>
+                        <th>
 
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IsTeamCoordinator)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.IsFullTime)
-                        </td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td>
+                        </th>
+                        <th> Name </th>
 
-                            @Html.ActionLink("Delete", "Delete", new { id = item.SdcDetailsId })
-                        </td>
-                    </tr>
-                }
+                        <th> TC/SDC </th>
+                        <th> FT/PT </th>
+                        <th> SEQUENCE </th>
+                        <th>UP</th>
+                        <th>DOWN</th>
+                        <th></th>
+
+                </tbody>
+                <tbody id="MoveableRow" >
+                    @foreach (var item in Model)
+
+                    {
+                        
+                        <tr id="dragrow" draggable="true">
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.SdcDetailsId })
+                            </td>
+                            <td id="name">
+                                @Html.DisplayFor(modelItem => item.Fullname)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsTeamCoordinator)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsFullTime)
+                            </td>
+                            <td></td>
+                            <td><button class="up_button" onclick="MoveUP()">UP</button></td>
+                            <td><button class="down_button"onclick="MoveDown()">Down</button></td>
+                            <td>
+
+                                @Html.ActionLink("Delete", "Delete", new { id = item.SdcDetailsId })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
 
             </table>
-        </div>
     </div>
 
     <div class="form-group">
@@ -73,3 +85,19 @@
             <input type="button" value="Save Changes & submit" onclick="location.href='@Url.Action("Create","DailyDatas")'" class="btn btn-default" />
         </div>
     </div>
+
+<script type="text/javascript">
+    $('#MoveableRow').sortable();
+</script>
+<script>
+
+    function MoveUP() {
+        var cell = document.getElementById('dragrow');
+        cell.innerHTML = 'UP'      
+    }
+    function MoveDown() {
+        var cell = document.getElementById('dragrow');
+        cell.innerHTML = 'DOWN'
+        
+    }
+</script>

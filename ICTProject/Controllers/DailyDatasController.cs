@@ -14,6 +14,10 @@ namespace ICTProject.Views
     public class DailyDatasController : Controller
     {
         private DbcContext db = new DbcContext();
+        public ActionResult View1()
+        {
+            return View();
+        }
 
         // GET: DailyDatas
         public ActionResult Index()
