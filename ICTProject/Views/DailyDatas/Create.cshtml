@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     <div class="form-group">
         <div class="col-md-2">
-            <input type="button" value="Add/Edit SDC" onclick="location.href='@Url.Action("Index","SdcDetails")'" class="btn btn-default" />
+            <a href='@Url.Action("Index","SdcDetails")' class="btn btn-default">ADD New SDC</a>
         </div>
         <div class="col-md-4">
 
