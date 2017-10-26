@@ -29,19 +29,19 @@
                     <span class="icon-bar"></span>
                 </button>
                 <text>Ict Project</text>
+
 <!-- This section here adds the dropdown button-->
                 <!-- DROP DOWN 1 FOR HOME-->
                 <<div class="dropdown">
                 <!--Ensure user is logged in to navigate to homePage-->
                    @if (User.Identity.IsAuthenticated)
                    {
-                    <button class="dropbtn">HOME</button>
-                     <!-- This section here adds the content for the dropdown-->
-                    <div class="dropdown-content">
-                    <li>@Html.ActionLink("Home", "RMHome", "Home")</li>
-                    </div>
+                       <!--HOME is a click button, No drop down-->
+                    <button class="dropbtn" value="HOME" onclick="location.href='@Url.Action("RMHome", "Home")'"> <a>HOME</a> </button>
                    }
                 </div>
+
+
                 <!-- DROP DOWN 2 FOR ENTER RESULTS-->
                 <<div class="dropdown">
 

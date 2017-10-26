@@ -201,6 +201,7 @@
     <Compile Include="Controllers\DropReportsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SdcDetailsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Data\DbcContext.cs" />
     <Compile Include="Data\TestData.cs" />
     <Compile Include="Global.asax.cs">
@@ -320,6 +321,11 @@
     <Content Include="Views\Home\ZDHome.cshtml" />
     <Content Include="Views\Home\UMHome.cshtml" />
     <Content Include="Views\DailyDatas\View1.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\DropHome\" />

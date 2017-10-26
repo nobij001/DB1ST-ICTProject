@@ -18,6 +18,11 @@ namespace ICTProject.Controllers
             return View();
         }
 
+        public ActionResult testEditAcc()
+        {
+            return View();
+        }
+
         // GET: Register
         public ActionResult Register()
         {
