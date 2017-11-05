@@ -22,3 +22,15 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.col-md-4{
+    float:left;
+
+}
+.col-md-6{
+    left:10%;
+    width:100%;
+}
+.col-md-12{
+    bottom:auto;
+}
