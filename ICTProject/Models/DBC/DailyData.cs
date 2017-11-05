@@ -23,6 +23,8 @@ namespace ICTProject.Models.DBC
         public int Interviews { get; set; }
 
         public SdcDetails SdcDetailsID { get; set; }
+        public int rmID { get; set; }
+        public int zoneID { get; set; }
 
     }
 }
